@@ -1,0 +1,31 @@
+#! /bin/sh
+
+set -e
+
+ICONDIR=/etc/X11/cursors
+
+case "$1" in
+    remove|deconfigure)
+        for theme in `find $ICONDIR -regex '.*Pulse-Glass.*theme$'`;
+        do
+            update-alternatives --remove x-cursor-theme $theme
+        done
+    ;;
+
+    upgrade)
+
+    ;;
+
+    failed-upgrade)
+
+    ;;
+
+    *)
+        echo "prerm called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+#DEBHELPER#
+
+exit 0

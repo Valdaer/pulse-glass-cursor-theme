@@ -1,0 +1,10 @@
+Package: pulse-glass-cursor-theme
+Version: 0.1~bpo80+1
+Architecture: all
+Maintainer: Sławomir Wójcik <valdaer@gmail.com>
+Installed-Size: 819
+Section: x11
+Priority: optional
+Homepage: http://opendesktop.org/content/show.php?content=124442&forumpage=4
+Description: modern X11 mouse theme
+ Package comes with 4 different colors for Pulse Glass mouse theme.

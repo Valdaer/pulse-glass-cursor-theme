@@ -1,0 +1,15 @@
+Source: pulse-glass-cursor-theme
+Section: x11
+Priority: optional
+Maintainer: Sławomir Wójcik <valdaer@gmail.com>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.6
+Homepage: http://opendesktop.org/content/show.php?content=124442&forumpage=4
+Vcs-Git: https://github.com/Valdaer/pulse-glass-cursor-theme.git
+Vcs-Browser: https://github.com/Valdaer/pulse-glass-cursor-theme
+
+Package: pulse-glass-cursor-theme
+Architecture: all
+Depends: ${misc:Depends}
+Description: modern X11 mouse theme
+ Package comes with 4 different colors for Pulse Glass mouse theme.

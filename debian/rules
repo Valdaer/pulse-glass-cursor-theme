@@ -1,0 +1,15 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+PKG=pulse-glass-cursor-theme
+
+override_dh_install:
+	dh_install
+	cd $(CURDIR)/debian/$(PKG)
+	set -e;	\
+	for theme in $$(ls -d Pulse-Glass*) ; \
+	  do \
+	    install -m 644 "$(CURDIR)/$$theme/index.theme" \
+		  "$(CURDIR)/debian/$(PKG)/etc/X11/cursors/$$theme.theme"; \
+	  done
