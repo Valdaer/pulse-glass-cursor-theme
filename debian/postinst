@@ -1,0 +1,30 @@
+#! /bin/sh
+
+set -e
+
+TARGET=/usr/share/icons/default/index.theme
+ICONDIR=/etc/X11/cursors
+
+case "$1" in
+    configure)
+	    for theme in `find $ICONDIR -regex '.*Pulse-Glass.*theme$'`; 
+	    do
+            if ! update-alternatives --list x-cursor-theme |grep -q $theme; then
+	            update-alternatives --install $TARGET x-cursor-theme $theme 50
+            fi
+	    done
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+
+    ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+#DEBHELPER#
+
+exit 0
